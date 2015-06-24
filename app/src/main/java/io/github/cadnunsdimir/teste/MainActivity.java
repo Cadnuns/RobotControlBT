@@ -29,9 +29,9 @@ public class MainActivity extends ActionBarActivity {
 
         fazerConexoesDoLayout_e_Listeners();
 
-        verificarCondicaoDoBluetooth();
+        verificarCondiçaoDoBluetooth();
     }
- 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -71,7 +71,7 @@ public class MainActivity extends ActionBarActivity {
 
     private static final String endereco_MAC_do_Bluetooth_Remoto = "20:14:05:15:32:00";
 
-    public static final int CODIGO_PARA_ATIVACAO_DO_BLUETOOTH = 1;
+    public static final int CODIGO_PARA_ATIVAÇAO_DO_BLUETOOTH = 1;
 
     // Anyone can create a UUID and use it to identify something with
     // reasonable confidence that the same identifier will never be
@@ -97,7 +97,7 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
-    public void verificarCondicaoDoBluetooth() {
+    public void verificarCondiçaoDoBluetooth() {
 
         // Get a handle to the default local Bluetooth adapter.
         meuBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -125,7 +125,7 @@ public class MainActivity extends ActionBarActivity {
                 // Bluetooth has been turned ON or RESULT_CANCELED if the user has
                 // rejected the request or an error has occurred.
                 Intent novoIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                startActivityForResult(novoIntent,  CODIGO_PARA_ATIVACAO_DO_BLUETOOTH);
+                startActivityForResult(novoIntent,  CODIGO_PARA_ATIVAÇAO_DO_BLUETOOTH);
 
             }
         }
@@ -137,7 +137,7 @@ public class MainActivity extends ActionBarActivity {
 
         switch(requestCode){
 
-            case  CODIGO_PARA_ATIVACAO_DO_BLUETOOTH:
+            case  CODIGO_PARA_ATIVAÇAO_DO_BLUETOOTH:
 
                 if(resultCode == Activity.RESULT_OK){
                     Toast.makeText(getApplicationContext(), "Bluetooth foi ativado", Toast.LENGTH_LONG).show();
